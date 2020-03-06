@@ -11,6 +11,8 @@ Aim:
     6. Eraser tool
     7. More colours
     8. Add shapes (rotate shapes)
+    9. layers?
+    10. undo button
     
     
     
