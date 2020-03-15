@@ -7,7 +7,7 @@ var helpers = null;
 
 
 function setup() {
-
+	
 	//create a canvas to fill the content div from index.html
 	canvasContainer = select('#content');
 	var c = createCanvas(canvasContainer.size().width, canvasContainer.size().height);
@@ -25,9 +25,13 @@ function setup() {
 	toolbox.addTool(new LineToTool());
 	toolbox.addTool(new sprayCan());
 	toolbox.addTool(new mirrorDrawTool());
+	toolbox.addTool(new vertexTool());
+
 	background(255);
 
 }
+
+
 
 function draw() {
 	//call the draw function from the selected tool.

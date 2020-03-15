@@ -18,4 +18,15 @@ function HelperFunctions() {
 	select("#saveImageButton").mouseClicked(function() {
 		saveCanvas('myCanvas', 'jpg');
 	});
+	select("#finishButton").mouseClicked(function(){
+		loadPixels();
+		currentShape = [];
+		console.log("test finish button");
+	});
+	select("#editButton").mouseClicked(function(){
+		console.log("test edit button");
+	});
+
+
+
 }
