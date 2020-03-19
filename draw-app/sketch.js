@@ -7,7 +7,7 @@ var helpers = null;
 
 
 function setup() {
-	
+
 	//create a canvas to fill the content div from index.html
 	canvasContainer = select('#content');
 	var c = createCanvas(canvasContainer.size().width, canvasContainer.size().height);
@@ -26,10 +26,12 @@ function setup() {
 	toolbox.addTool(new sprayCan());
 	toolbox.addTool(new mirrorDrawTool());
 	toolbox.addTool(new vertexTool());
+	toolbox.addTool(new rubberTool());
 
 	background(255);
 
 }
+
 
 
 
@@ -43,4 +45,10 @@ function draw() {
 	} else {
 		alert("it doesn't look like your tool has a draw method!");
 	}
+}
+function mousePressOnCanvas(canvas){
+	if (mouseX> canvas.elt.offsetLeft && mouseX < (canvas.elt.offsetLeft +canvas.width)&& mouseY > canvas.elt.offsetTop && mouseY < (canvas.elt.offsetTop + canvas.height)){
+		return true;
+	}
+	return false;
 }

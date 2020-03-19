@@ -33,6 +33,7 @@ function FreehandTool(){
 			//there to the current mouse location
 			else{
 				noFill();
+				stroke(colourPalette(selectedcolour))
 				strokeWeight(5)
 				line(previousMouseX, previousMouseY, mouseX, mouseY);
 				previousMouseX = mouseX;

@@ -1,16 +1,19 @@
+
 function vertexTool(){
+
   this.icon = "assets/vector.jpg";
   this.name = "vector";
-
+  var currentShape = [];
   var editButton;
   var finishButton;
-  var currentShape = [];
+
   var editMode = false;
  this.setup = function(){
 
    loadPixels();
    editButton = createButton("Edit Shape")
    finishButton = createButton("Finish Shape")
+
  }
  this.draw = function (){
 

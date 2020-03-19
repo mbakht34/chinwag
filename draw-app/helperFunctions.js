@@ -26,8 +26,4 @@ function HelperFunctions() {
 	select("#editButton").mouseClicked(function(){
 		console.log("test edit button");
 	});
-
-
-
 }
-
