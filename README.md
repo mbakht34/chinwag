@@ -5,17 +5,13 @@ Aim:
 
     1. Draw shapes via shape tool.
     2. Adjustable thickness of pen tool.
-    3. Gradually change colour of the pen as you hold down the button.
-    4. Adding text box (fonts, text size, bold, italics, underline).
-    5. Zooming in and out button
-    6. Eraser tool
-    7. More colours
-    8. Add shapes (rotate shapes)
-    9. layers?
-    10. undo button
-    
-    
-    
+    3. Zooming in and out button
+    4. Eraser tool
+    5. Add shapes (rotate shapes)
+    6. undo button
 
-    
+currently, thickness tool is in the making, we have started to make steps to fully completing.
 
+Adding & rotating shape function, we have started this (this will essentially be the vertex tool)
+
+we have also made progress eraser tool. once selected you can hold the mouse and drag over any drawing to remove it.    
