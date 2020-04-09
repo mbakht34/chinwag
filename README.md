@@ -6,7 +6,7 @@ Aim:
     1. Draw shapes via shape tool.
     2. Adjustable thickness of pen tool.
     3. Zooming in and out button
-    4. Eraser tool
+    4. Eraser tool **DONE**
     5. Add shapes (rotate shapes)
     6. undo button
 
