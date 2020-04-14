@@ -3,14 +3,15 @@ function FreehandTool(){
 	this.icon = "assets/freehand.jpg";
 
 	this.name = "freehand";
-
+	increase = createButton('Getthiccordietryin')
+	increase.position(800,7)
 	//to smoothly draw we'll draw a line from the previous mouse location
 	//to the current mouse location. The following values store
 	//the locations from the last frame. They are -1 to start with because
 	//we haven't started drawing yet.
 	var previousMouseX = -1;
 	var previousMouseY = -1;
-
+	var penSize = 1;
 
 	this.keyPressed = function(){
 				if (keyCode == 187){
@@ -20,27 +21,45 @@ function FreehandTool(){
 	}
 
 
+
 	this.draw = function(){
+
 		//if the mouse is pressed
 		if(mouseIsPressed){
+
 			//check if they previousX and Y are -1. set them to the current
 			//mouse X and Y if they are.
-				if (previousMouseX == -1){
+			if (previousMouseX == -1){
 				previousMouseX = mouseX;
 				previousMouseY = mouseY;
 			}
 			//if we already have values for previousX and Y we can draw a line from
 			//there to the current mouse location
 			else{
-				var penSize = 1
-				noFill();
-				select('#incSize').mouseClicked(function(){
+				if(increase.mouseClicked == true){
+					penSize = penSize + 10;
+				}
 
-				strokeWeight(penSize +3)
-			})
+				noFill();
+			// 	select('#incSize').mouseClicked(function(){
+			//
+			// 	strokeWeight(penSize + 100)
+			// })
+
 			select('#decSize').mouseClicked(function(){
-				strokeWeight(penSize - 5)
+				strokeWeight(penSize - 20)
 			})
+
+
+				line(previousMouseX, previousMouseY, mouseX, mouseY);
+				previousMouseX = mouseX;
+				previousMouseY = mouseY;
+
+
+
+			}
+
+
 		}
 		//if the user has released the mouse we want to set the previousMouse values
 		//back to -1.
@@ -50,4 +69,4 @@ function FreehandTool(){
 			previousMouseY = -1;
 		}
 	};
-}
+	}

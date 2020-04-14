@@ -1,11 +1,14 @@
 
 function vertexTool(){
-
+// this gives and icon and name to the tool
   this.icon = "assets/vector.jpg";
   this.name = "vector";
+  // an array to store the points that are made
   var currentShape = [];
+  // buttons to change the state of the vertex tool
   var editButton;
   var finishButton;
+  // to ensure edit mode is always off unless specifically asked to be on
   var editMode = false;
 
    editButton = createButton("Edit Shape")
