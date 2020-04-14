@@ -25,32 +25,22 @@ function FreehandTool(){
 		if(mouseIsPressed){
 			//check if they previousX and Y are -1. set them to the current
 			//mouse X and Y if they are.
-			if (previousMouseX == -1){
+				if (previousMouseX == -1){
 				previousMouseX = mouseX;
 				previousMouseY = mouseY;
 			}
 			//if we already have values for previousX and Y we can draw a line from
 			//there to the current mouse location
 			else{
+				var penSize = 1
 				noFill();
-				
-				strokeWeight(5)
-				line(previousMouseX, previousMouseY, mouseX, mouseY);
-				previousMouseX = mouseX;
-				previousMouseY = mouseY;
-				// var counter = 5;
-			// if(keyCode == 187){
-			// 	// counter = counter + 5;
-			// 	strokeWeight(10)
-			// 	// console.log(strokeWeight())
-			// 	line(previousMouseX, previousMouseY, mouseX, mouseY);
-			// 	previousMouseX = mouseX;
-			// 	previousMouseY = mouseY;
-			// }
+				select('#incSize').mouseClicked(function(){
 
-
-
-			}
+				strokeWeight(penSize +3)
+			})
+			select('#decSize').mouseClicked(function(){
+				strokeWeight(penSize - 5)
+			})
 		}
 		//if the user has released the mouse we want to set the previousMouse values
 		//back to -1.
