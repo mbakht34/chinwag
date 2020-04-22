@@ -15,3 +15,11 @@ currently, thickness tool is in the making, we have started to make steps to ful
 Adding & rotating shape function, we have started this (this will essentially be the vertex tool)
 
 we have also made progress eraser tool. once selected you can hold the mouse and drag over any drawing to remove it.    
+
+
+
+BUGS:
+
+    movable points do not disappear when shape finish on vector tool
+    points do not movat much on vector tool
+    thickness does not constantly increase rather it just increases a little.
