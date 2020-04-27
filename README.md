@@ -3,11 +3,11 @@ A drawing app as our uni coursework
 
 Aim:
 
-    1. Draw shapes via shape tool.
-    2. Adjustable thickness of pen tool.
+    1. Draw shapes via shape tool. **DONE**
+    2. Adjustable thickness of pen tool.**DONE
     3. Zooming in and out button
     4. Eraser tool **DONE**
-    5. Add shapes (rotate shapes)
+    5. vetrex tool **DONE**
     6. undo button
 
 currently, thickness tool is in the making, we have started to make steps to fully completing.
