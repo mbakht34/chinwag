@@ -1,32 +1,86 @@
 
 function vertexTool(){
-
+// this gives and icon and name to the tool
   this.icon = "assets/vector.jpg";
   this.name = "vector";
-  var currentShape = [];
+  // an array to store the points that are made
+
+  // buttons to change the state of the vertex tool
   var editButton;
   var finishButton;
-
+  // to ensure edit mode is always off unless specifically asked to be on
   var editMode = false;
- this.setup = function(){
 
-   loadPixels();
    editButton = createButton("Edit Shape")
-   finishButton = createButton("Finish Shape")
+   select('#editButton').mouseClicked(function(){
+     if(!editMode){
+       editMode = true;
+       editButton.html("Edit Shape")
+       console.log("test edit");
+     }
+     else{
+       editMode = true;
+       editButton.html("Add Vertices");
+     }
 
+   })
+   finishButton = createButton("Finish Shape")
+   select("#finishButton").mouseClicked(function() {
+      editMode = false;
+      draw();
+      loadPixels();
+      currentShape = [];
+      console.log("test finish")
+
+ 	});
+
+
+
+
+ function  mousePressOnCanvas(canvas){
+ 	if (mouseX> canvas.elt.offsetLeft && mouseX < (canvas.elt.offsetLeft +canvas.width)&& mouseY > canvas.elt.offsetTop && mouseY < (canvas.elt.offsetTop + canvas.height)){
+ 		return true;
+ 	}
+ 	return false;
  }
  this.draw = function (){
-
-   if (mouseIsPressed){
+   
+   if (mouseIsPressed && mousePressOnCanvas(select('#content'))){
+     if(!editMode){
      currentShape.push({
        x: mouseX,
        y: mouseY
      });
-     beginShape();
-     for (var i = 0; i<currentShape.length; i++){
-       vertex(currentShape[i].x, currentShape[i].y);
+     updatePixels()
+   }
+     else{
+       for (var i = 0; i<currentShape.length; i++){
+         updatePixels();
+         if(dist(currentShape[i].x, currentShape[i].y, mouseX, mouseY) <15){
+           currentShape[i].x = mouseX;
+           currentShape[i].y = mouseY;
+         }
+       }
      }
+    beginShape();
+     for (var i = 0; i<currentShape.length; i++){
+       strokeWeight(slider.value())
+       noFill();
+       vertex(currentShape[i].x, currentShape[i].y);
+       updatePixels();
+       console.log(currentShape);
+       if(editMode == true){
+         push();
+         fill(255,0,0);
+         ellipse(currentShape[i].x, currentShape[i].y, 10)
+         noFill();
+         pop();
+       }
+     }
+
      endShape();
+     console.log(editMode)
+
    }
  }
 

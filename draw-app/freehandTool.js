@@ -1,7 +1,6 @@
 function FreehandTool(){
 	//set an icon and a name for the object
 	this.icon = "assets/freehand.jpg";
-
 	this.name = "freehand";
 
 	//to smoothly draw we'll draw a line from the previous mouse location
@@ -11,18 +10,11 @@ function FreehandTool(){
 	var previousMouseX = -1;
 	var previousMouseY = -1;
 
-
-	this.keyPressed = function(){
-				if (keyCode == 187){
-					console.log("ima chicken");
-				}
-
-	}
-
-
 	this.draw = function(){
+
 		//if the mouse is pressed
 		if(mouseIsPressed){
+
 			//check if they previousX and Y are -1. set them to the current
 			//mouse X and Y if they are.
 			if (previousMouseX == -1){
@@ -32,24 +24,12 @@ function FreehandTool(){
 			//if we already have values for previousX and Y we can draw a line from
 			//there to the current mouse location
 			else{
-				noFill();
-				stroke(colourPalette(selectedcolour))
-				strokeWeight(5)
+				strokeWeight(slider.value());
 				line(previousMouseX, previousMouseY, mouseX, mouseY);
 				previousMouseX = mouseX;
 				previousMouseY = mouseY;
-				// var counter = 5;
-			// if(keyCode == 187){
-			// 	// counter = counter + 5;
-			// 	strokeWeight(10)
-			// 	// console.log(strokeWeight())
-			// 	line(previousMouseX, previousMouseY, mouseX, mouseY);
-			// 	previousMouseX = mouseX;
-			// 	previousMouseY = mouseY;
-			// }
 
-
-
+				updatePixels();
 			}
 		}
 		//if the user has released the mouse we want to set the previousMouse values
@@ -60,4 +40,4 @@ function FreehandTool(){
 			previousMouseY = -1;
 		}
 	};
-}
+	}

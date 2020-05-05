@@ -2,7 +2,7 @@
 function LineToTool(){
 	this.icon = "assets/lineTo.jpg";
 	this.name = "LineTo";
-
+	slider();
 	var startMouseX = -1;
 	var startMouseY = -1;
 	var drawing = false;
@@ -16,9 +16,10 @@ function LineToTool(){
 				drawing = true;
 				loadPixels();
 			}
-            //once you have drawn then the updatepixels method will be called. This is for any drawings that you make that require changes. 
+            //once you have drawn then the updatepixels method will be called. This is for any drawings that you make that require changes.
 			else{
 				updatePixels();
+				strokeWeight(slider.value())
 				line(startMouseX, startMouseY, mouseX, mouseY);
 			}
 

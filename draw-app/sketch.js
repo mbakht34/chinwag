@@ -3,7 +3,8 @@
 var toolbox = null;
 var colourP = null;
 var helpers = null;
-
+var slider;
+var currentShape = [];
 
 
 function setup() {
@@ -27,6 +28,11 @@ function setup() {
 	toolbox.addTool(new mirrorDrawTool());
 	toolbox.addTool(new vertexTool());
 	toolbox.addTool(new rubberTool());
+	toolbox.addTool(new drawShapeTool());
+	toolbox.addTool(new rectTool());
+	toolbox.addTool(new textTool());
+	toolbox.addTool(new deleteVertex());
+
 
 	background(255);
 
@@ -45,10 +51,4 @@ function draw() {
 	} else {
 		alert("it doesn't look like your tool has a draw method!");
 	}
-}
-function mousePressOnCanvas(canvas){
-	if (mouseX> canvas.elt.offsetLeft && mouseX < (canvas.elt.offsetLeft +canvas.width)&& mouseY > canvas.elt.offsetTop && mouseY < (canvas.elt.offsetTop + canvas.height)){
-		return true;
-	}
-	return false;
 }

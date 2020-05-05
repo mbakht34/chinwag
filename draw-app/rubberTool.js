@@ -1,13 +1,10 @@
 function rubberTool(){
+  // gives tool a icon and name
   this.icon = "assets/eraser.jpg";
   this.name = "eraser";
 
-
-  var previousMouseX = -1;
-	var previousMouseY = -1;
-
-
-	this.draw= function(){
+// we need a draw function in order for the erase function to work.
+  this.draw = function(){
 		//if the mouse is pressed
 		if(mouseIsPressed){
 			//check if they previousX and Y are -1. set them to the current
@@ -16,15 +13,21 @@ function rubberTool(){
 				previousMouseX = mouseX;
 				previousMouseY = mouseY;
 			}
-			//if we already have values for previousX and Y we can draw a line from
+			//if we already have values for previousX and Y we can erase from
 			//there to the current mouse location
 			else{
-        stroke(255)
-        strokeWeight(100)
-        fill(0);
+        // erases drawings
+        erase();
+				noFill();
+        // allows user to change thickness of eraser with slider
+				strokeWeight(slider.value())
 				line(previousMouseX, previousMouseY, mouseX, mouseY);
 				previousMouseX = mouseX;
 				previousMouseY = mouseY;
+        noErase();
+
+
+
 			}
 		}
 		//if the user has released the mouse we want to set the previousMouse values

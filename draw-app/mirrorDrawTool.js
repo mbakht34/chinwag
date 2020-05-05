@@ -47,6 +47,7 @@ function mirrorDrawTool() {
 				//line of symmetry
 				var oX = this.calculateOpposite(mouseX, "x");
 				var oY = this.calculateOpposite(mouseY, "y");
+				strokeWeight(slider.value());
 				line(previousOppositeMouseX, previousOppositeMouseY, oX, oY);
 				previousOppositeMouseX = oX;
 				previousOppositeMouseY = oY;
